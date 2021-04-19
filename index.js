@@ -27,7 +27,6 @@ select.addEventListener('change', showSelection);
 
 const showResult = (arr) => {
     let innerRes = arr.length !== 0 ? arr.map(item => `<li>${item}</li>`) : `<li>No matches</li>`;
-    console.log(innerRes)
     document.getElementById('result').innerHTML = typeof innerRes === 'string'? innerRes: innerRes.join('')
 }
 
@@ -36,6 +35,6 @@ let dataList = [];
 async function _getList() {
     const response = await fetch('./list.json', { method: 'GET'});
     const data = await response.json();
-    dataList = [...data]
+    dataList = [...data];
   }
 _getList();
